@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  # Для того, чтобы каждый инстанс имел уникальный id иначе упадет с ошибкой.
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
